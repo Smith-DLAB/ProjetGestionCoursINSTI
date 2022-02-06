@@ -13,6 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () 
+{
     return view('welcome');
-});
+})->name('home | Laravel');
+
+Route::get('/homefiche', function ()
+{
+	return view('gestionDeroulementCours/ficheDeroulementCours');
+})->name('fiche_Deroulement_Cours');
+
+Route::get('/accueil', function()
+{
+	return view('gestionDeroulementCours/accueil');
+})->name('accueil');
+
+Route::get('/dashboard', function ()
+{
+	return view('gestionDeroulementCours/dashboard');
+})->name('dashboard');
+
+Route::get('/profile', function ()
+{
+	return view('gestionDeroulementCours/profile');
+})->name('profile');
