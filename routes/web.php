@@ -15,8 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () 
 {
+	// $getPost = DB::select('SELECT * from post') ;
+	// dd( $getPost[1]->title,
+	//	$getPost[0]->description ); 
+
+	$title = 'Du contenu pour le titre' ;
+	$description = "Du contenu pour la description" ; 
+	$postPost = DB::insert('INSERT INTO post(title, description) values(:title, :description)' , 
+							[
+								"title" => $title,
+								"description" => $description
+							]
+						);
+
     return view('welcome');
-})->name('home | Laravel');
+})->name('home_Laravel');
 
 Route::get('/homefiche', function ()
 {
